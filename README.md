@@ -3,7 +3,8 @@ Universal Résumé Template
 
 > There's also a hosted builder (alpha):  
 > [UniversalResume.app](https://universalresume.app/?s=g)
-> 
+>
+> - Always-free résumé (CV) website and PDF, grounded in [the best resume-writing guide](https://www.reddit.com/r/jobs/comments/7y8k6p/im_an_exrecruiter_for_some_of_the_top_companies/) and the best designs (single-column one soon).
 > - Write in plain text (Markdown)
 > - Import & rewrite an existing resume with AI
 > - Click anywhere on the preview to edit
