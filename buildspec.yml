@@ -1,0 +1,45 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - echo "Node $(node -v) / npm $(npm -v)"
+
+  pre_build:
+    commands:
+      - echo "Authenticating to CodeArtifact..."
+      - aws codeartifact login --tool npm
+          --domain "$CA_DOMAIN"
+          --domain-owner "$ACCOUNT_ID"
+          --repository "$CA_REPO"
+          --region "$AWS_DEFAULT_REGION"
+      - echo "Installing dependencies from CodeArtifact..."
+      - npm ci
+
+  build:
+    commands:
+      - echo "Building Tailwind CSS on $(date)"
+      # Compiles tailwind.css -> docs/build.css via PostCSS
+      - npm run build
+      # docs/ is already the complete webroot (index.html lives there)
+      - test -f docs/index.html || (echo "FAIL: docs/index.html missing" && exit 1)
+      - test -s docs/build.css || (echo "FAIL: build.css missing or empty" && exit 1)
+
+  post_build:
+    commands:
+      - echo "Build completed on $(date)"
+      - ls -la docs/
+      - echo "CSS size: $(wc -c < docs/build.css) bytes"
+
+cache:
+  paths:
+    - 'node_modules/**/*'
+
+artifacts:
+  files:
+    - appspec.yml
+    - scripts/**/*
+    - docs/**/*
+  discard-paths: no
