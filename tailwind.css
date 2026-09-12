@@ -15,7 +15,6 @@
   body {
     -webkit-print-color-adjust: exact !important;
     color-adjust: exact !important;
-    color: black !important;
   }
 
   .page {
@@ -27,14 +26,18 @@
     text-shadow: 0 0 0 #fff !important;
   }
 
-  h1, h2, h3, p, li {
-    color: black !important;
-  }
+  h1 { color: theme(colors.gray.750) !important; }
+  h2 { color: theme(colors.gray.550) !important; }
+  h3 { color: theme(colors.gray.700) !important; }
+  p, li { color: theme(colors.gray.700) !important; }
+
+  .text-gray-650 { color: theme(colors.gray.650) !important; }
+}
 
   html {
     font-size: 12.288px !important;
   }
-}
+
 
 html {
   font-size: 13.176471px;
