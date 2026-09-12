@@ -10,11 +10,7 @@ phases:
   pre_build:
     commands:
       - echo "Authenticating to CodeArtifact..."
-      - aws codeartifact login --tool npm
-          --domain "$CA_DOMAIN"
-          --domain-owner "$ACCOUNT_ID"
-          --repository "$CA_REPO"
-          --region "$AWS_DEFAULT_REGION"
+      - aws codeartifact login --tool npm --domain "$CA_DOMAIN" --domain-owner "$ACCOUNT_ID" --repository "$CA_REPO" --region "$AWS_DEFAULT_REGION"
       - echo "Installing dependencies from CodeArtifact..."
       - npm ci
 
