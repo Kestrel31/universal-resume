@@ -27,7 +27,7 @@ phases:
     commands:
       - echo "Build completed on $(date)"
       - ls -la docs/
-      - echo "CSS size: $(wc -c < docs/build.css) bytes"
+      - "echo CSS size: $(wc -c < docs/build.css) bytes"
 
 cache:
   paths:
