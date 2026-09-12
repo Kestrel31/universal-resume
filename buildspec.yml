@@ -20,8 +20,8 @@ phases:
       # Compiles tailwind.css -> docs/build.css via PostCSS
       - npm run build
       # docs/ is already the complete webroot (index.html lives there)
-      - test -f docs/index.html || (echo "FAIL: docs/index.html missing" && exit 1)
-      - test -s docs/build.css || (echo "FAIL: build.css missing or empty" && exit 1)
+      - "test -f docs/index.html || (echo 'FAIL: docs/index.html missing' && exit 1)"
+      - "test -s docs/build.css || (echo 'FAIL: build.css missing or empty' && exit 1)"
 
   post_build:
     commands:
