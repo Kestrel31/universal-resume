@@ -5,6 +5,7 @@
 
 @screen print {
   @page {
+    size: legal;              /* ← add this line */
     margin-top: 0in;
     margin-bottom: 0in;
     margin-left: 0in;
@@ -18,7 +19,7 @@
   }
 
   .page {
-    padding: theme(spacing.16) theme(spacing.16) !important;
+    padding: theme(spacing.16) theme(spacing.8) !important;
   }
 
   .initial {

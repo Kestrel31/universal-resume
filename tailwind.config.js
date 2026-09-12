@@ -38,7 +38,9 @@ module.exports = {
       },
       maxWidth: {
         "letter": "66.40625rem",
-        "a4": "64.609375rem"
+        "a4": "64.609375rem",
+        "legal": "66.40625rem"          // same width as Letter
+
       },
       height: {
         "letter": "85.9375rem",
@@ -47,6 +49,9 @@ module.exports = {
         "a4": "91.350883rem",
         "a4-col": "77.038383rem",
         "a4-col-full": "83.350883rem",
+        "legal": "109.375rem",           // 14in
+        "legal-col": "101.375rem",       // 14in − 14.3125 header offset
+        "legal-col-full": "101.375rem",  // 14in − 8 offset
       },
       spacing: {
         "0.5": "2px", // 2px
